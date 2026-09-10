@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 1,
             spaceBetween: 24,
             loop: true,
-            loopPreventsSliding: false,
             grabCursor: true,
             speed: 600,
             autoplay: {
@@ -64,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             pagination: {
                 el: '.specialists-carousel-wrapper .swiper-pagination',
-                clickable: true,
-                dynamicBullets: false
+                clickable: true
             },
             navigation: {
                 nextEl: '.specialists-carousel-wrapper .swiper-button-next',
@@ -74,12 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             breakpoints: {
                 640: {
                     slidesPerView: 2,
-                    slidesPerGroup: 1,
                     spaceBetween: 24
                 },
                 992: {
                     slidesPerView: 3,
-                    slidesPerGroup: 1,
                     spaceBetween: 30
                 }
             }
