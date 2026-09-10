@@ -1507,26 +1507,28 @@ h1, h2, h3, h4 {
     }
 
     .hero-stripe-bar {
-        flex-direction: column;
-        gap: 16px;
-        border-radius: var(--radius-lg);
-        padding: 24px 20px;
+        flex-direction: row;
+        gap: 12px;
+        border-radius: var(--radius-full);
+        padding: 16px 20px;
+        justify-content: space-between;
     }
 
     .stripe-item {
-        flex-direction: row;
-        justify-content: flex-start;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        text-align: left;
-        gap: 12px;
-        width: 100%;
+        text-align: center;
+        gap: 6px;
+        flex: 1;
     }
 
     .stripe-separator {
-        width: 100%;
-        height: 1px;
+        width: 1px;
+        height: 32px;
         background: var(--color-border);
         margin: 0;
+        flex-shrink: 0;
     }
 
     .video-edition-section {
@@ -1647,54 +1649,67 @@ h1, h2, h3, h4 {
         font-size: 1rem;
     }
 
-    /* Tarja Informativa Mobile - Tópicos na mesma linha (ícone ao lado do texto) */
+    /* Tarja Informativa Mobile - Lado a lado em linha única horizontal (formato tarja) */
     .hero-stripe-section {
-        padding: 12px 0 0;
+        padding: 8px 0 0;
     }
 
     .hero-stripe-bar {
-        max-width: 320px;
+        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
-        padding: 16px 14px;
-        gap: 12px;
-        border-radius: var(--radius-md);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        padding: 12px 10px;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+        border-radius: var(--radius-full) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     }
 
     .stripe-item {
-        flex-direction: row; /* Ícone e textos na mesma linha horizontal */
-        justify-content: flex-start;
-        align-items: center;
-        text-align: left;
-        gap: 12px;
-        width: 100%;
-        padding: 2px 4px;
+        flex-direction: column !important; /* Ícone em cima, texto embaixo em cada bloco */
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 4px !important;
+        flex: 1 !important;
+        padding: 2px !important;
     }
 
     .stripe-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 1.05rem;
-        flex-shrink: 0;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.95rem !important;
     }
 
     .stripe-text {
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
     .stripe-text strong {
-        font-size: 0.88rem;
-        line-height: 1.25;
-        white-space: nowrap;
+        font-size: 0.76rem !important;
+        line-height: 1.15 !important;
+        white-space: nowrap !important;
     }
 
     .stripe-text span {
-        font-size: 0.74rem;
-        margin-top: 2px;
-        white-space: nowrap;
+        font-size: 0.64rem !important;
+        margin-top: 1px !important;
+        white-space: nowrap !important;
+        color: var(--color-text-dim) !important;
+    }
+
+    .stripe-separator {
+        display: block !important;
+        width: 1px !important;
+        height: 28px !important;
+        background: var(--color-border) !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
     }
 
     /* Seções e Títulos Mobile */
