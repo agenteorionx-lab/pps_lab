@@ -555,7 +555,7 @@ h1, h2, h3, h4 {
    SEÇÃO 4: PRA QUEM É
    ==================================================== */
 .target-section {
-    padding: 115px 0;
+    padding: 100px 0 60px;
     background-color: var(--color-bg-deep);
 }
 
@@ -563,24 +563,31 @@ h1, h2, h3, h4 {
     background: rgba(14, 51, 43, 0.5);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: 72px 54px;
+    padding: 56px 48px;
     backdrop-filter: blur(10px);
 }
 
 .target-main-phrase {
     font-size: 1.35rem;
-    line-height: 1.55;
+    line-height: 1.6;
     color: #FFFFFF;
     max-width: 920px;
     margin: 20px auto 0;
     font-weight: 500;
 }
 
+/* ====================================================
+   SEÇÃO 4.1: PILARES E TEMAS ABORDADOS (BLOCO INDEPENDENTE)
+   ==================================================== */
+.pillars-section {
+    padding: 20px 0 110px;
+    background-color: var(--color-bg-deep);
+}
+
 .target-pillars-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    margin-top: 50px;
 }
 
 .pillar-card {
@@ -934,60 +941,16 @@ h1, h2, h3, h4 {
 }
 
 /* ====================================================
-   SEÇÃO 7: TUDO QUE ESTÁ INCLUSO
+   SEÇÃO: DA TEORIA DO CONGRESSO PARA A PRÁTICA
    ==================================================== */
-.included-section {
-    padding: 125px 0;
+.practice-pillars-section {
+    padding: 120px 0;
     background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border-subtle);
 }
 
-.included-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+.practice-pillars-section .target-pillars-grid {
     margin-top: 50px;
-}
-
-.included-item {
-    background: rgba(14, 51, 43, 0.6);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 28px 24px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    transition: var(--transition);
-}
-
-.included-item:hover {
-    border-color: var(--color-gold);
-    transform: translateY(-3px);
-    background: rgba(18, 61, 52, 0.8);
-}
-
-.included-item.included-highlight {
-    background: linear-gradient(90deg, rgba(245, 234, 170, 0.15) 0%, rgba(14, 51, 43, 0.8) 100%);
-    border-color: var(--color-gold);
-    grid-column: 2; /* Centraliza o item solitário na segunda coluna da grade de 3 */
-}
-
-.included-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: var(--radius-sm);
-    background: rgba(245, 234, 170, 0.12);
-    color: var(--color-gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
-.included-text {
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: #FFFFFF;
 }
 
 /* ====================================================
@@ -1027,8 +990,50 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-full);
 }
 
+/* Lista de entregáveis do checkout */
+.investment-deliverables {
+    margin: 36px auto 28px;
+    max-width: 520px;
+    text-align: left;
+    background: rgba(8, 26, 23, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 28px 32px;
+}
+
+.deliverables-title {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-bottom: 18px;
+    font-family: var(--font-heading);
+}
+
+.deliverables-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.deliverables-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+.deliverables-list li i {
+    color: var(--color-gold);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
 .price-box {
-    margin: 36px 0 28px;
+    margin: 32px 0 24px;
 }
 
 .price-installments-label {
@@ -1106,11 +1111,24 @@ h1, h2, h3, h4 {
     background-color: var(--color-bg-primary);
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+.testimonials-carousel-wrapper {
     margin-top: 55px;
+    position: relative;
+    width: 100%;
+}
+
+.testimonialsSlider {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 4px 20px;
+}
+
+.testimonialsSlider .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .testimonial-card {
@@ -1120,6 +1138,7 @@ h1, h2, h3, h4 {
     overflow: hidden;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     transition: var(--transition);
+    width: 100%;
 }
 
 .testimonial-card:hover {
@@ -1142,6 +1161,83 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* Controles do Carrossel de Depoimentos */
+.testimonials-navigation-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+    position: relative;
+    width: 100%;
+}
+
+.testimonials-navigation-wrapper .swiper-pagination {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important;
+}
+
+.testimonials-navigation-wrapper .swiper-pagination-bullet {
+    background: var(--color-text-muted) !important;
+    opacity: 0.4 !important;
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0 !important;
+    border-radius: var(--radius-full) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.testimonials-navigation-wrapper .swiper-pagination-bullet-active {
+    background: var(--color-gold) !important;
+    opacity: 1 !important;
+    width: 24px !important;
+    height: 8px !important;
+    box-shadow: 0 0 10px rgba(245, 234, 170, 0.4) !important;
+}
+
+.testimonials-prev,
+.testimonials-next {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    width: 44px !important;
+    height: 44px !important;
+    flex-shrink: 0 !important;
+    border-radius: var(--radius-full) !important;
+    background: rgba(14, 51, 43, 0.8) !important;
+    border: 1px solid var(--color-gold) !important;
+    color: var(--color-gold) !important;
+    cursor: pointer !important;
+    transition: var(--transition) !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+}
+
+.testimonials-prev::after,
+.testimonials-next::after {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+}
+
+.testimonials-prev:hover,
+.testimonials-next:hover {
+    background: var(--color-gold) !important;
+    color: #122822 !important;
+    box-shadow: 0 4px 15px rgba(245, 234, 170, 0.35) !important;
 }
 
 /* ====================================================
@@ -1233,6 +1329,61 @@ h1, h2, h3, h4 {
 }
 
 /* ====================================================
+   BLOCO DE DÚVIDAS VIA WHATSAPP (FINAL DA FAQ)
+   ==================================================== */
+.faq-whatsapp-box {
+    margin-top: 55px;
+    background: linear-gradient(135deg, rgba(14, 51, 43, 0.7) 0%, rgba(8, 26, 23, 0.9) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 44px 32px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+.faq-whatsapp-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--color-gold);
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+}
+
+.faq-whatsapp-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    max-width: 580px;
+    margin: 0 auto 28px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #25D366;
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp i {
+    font-size: 1.4rem;
+}
+
+.btn-whatsapp:hover {
+    background: #20BA5A;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(37, 211, 102, 0.45);
+    color: #FFFFFF;
+}
+
+/* ====================================================
    RODAPÉ
    ==================================================== */
 .footer-section {
@@ -1280,40 +1431,78 @@ h1, h2, h3, h4 {
 @media (max-width: 992px) {
     .hero-section {
         min-height: auto;
-        padding: 60px 0 60px;
-    }
-
-    .hero-container {
+        padding: 40px 0 35px;
         display: block;
     }
 
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        padding: 0 20px;
+    }
+
     .hero-bg-dra {
-        position: relative;
-        width: 100%;
-        max-width: 420px;
-        height: 520px;
-        margin: 30px auto -60px;
-        background-position: center bottom;
-        left: auto;
-        right: auto;
-        bottom: auto;
+        position: relative !important;
+        order: -1 !important; /* Posiciona a Dra. Mariana no topo */
+        width: 100% !important;
+        max-width: 330px !important;
+        height: 380px !important;
+        margin: 0 auto -45px !important; /* Encaixe suave com o logo e texto */
+        background-position: center top !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        top: auto !important;
+        z-index: 1 !important;
+        display: block !important;
+    }
+
+    /* Filtro / fade degradê suave cobrindo o corte inferior da imagem */
+    .hero-bg-dra::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 48% !important;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(11, 35, 31, 0.7) 50%, 
+            rgba(11, 35, 31, 1) 100%) !important;
+        pointer-events: none !important;
     }
 
     .hero-overlay-gradient {
-        background: linear-gradient(180deg, 
-            rgba(11, 35, 31, 1) 0%, 
-            rgba(11, 35, 31, 0.85) 60%, 
-            transparent 100%);
+        display: none !important;
     }
 
     .hero-content {
-        max-width: 100%;
-        margin-left: 0;
-        text-align: center;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        position: relative !important;
+        z-index: 2 !important; /* Fica acima do fade da foto */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-logo-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
     }
 
     .hero-actions {
-        align-items: center;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
     }
 
     .hero-stripe-section {
@@ -1343,7 +1532,7 @@ h1, h2, h3, h4 {
     }
 
     .video-edition-section {
-        padding: 90px 0;
+        padding: 80px 0;
     }
 
     .pps-letters-grid {
@@ -1376,74 +1565,343 @@ h1, h2, h3, h4 {
         align-items: flex-start;
         text-align: left;
     }
-
-    .included-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .included-item.included-highlight {
-        grid-column: span 2; /* Em 2 colunas, ocupa as duas centralizando com elegância */
-    }
-
-    .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
 }
 
 @media (max-width: 640px) {
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        max-width: 340px;
-        margin: 40px auto 0;
+    /* Top Bar Mobile */
+    .top-bar {
+        padding: 10px 0;
     }
-    .included-item.included-highlight {
-        grid-column: span 1;
-    }
+
     .top-bar-content {
         flex-direction: column;
         text-align: center;
-        gap: 6px;
+        gap: 8px;
     }
 
     .top-info {
         display: none;
     }
 
+    .top-tag {
+        font-size: 0.8rem;
+    }
+
+    .top-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    /* Hero Section Mobile */
+    .hero-section {
+        padding: 30px 0 20px !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+
+    .hero-bg-dra {
+        position: relative !important;
+        order: -1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 290px !important;
+        height: 360px !important;
+        margin: 0 auto -50px !important; /* Transição perfeita sobrepondo o logo e badge */
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        top: auto !important;
+    }
+
+    .hero-bg-dra::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 52% !important;
+        background: linear-gradient(to bottom, 
+            transparent 0%, 
+            rgba(11, 35, 31, 0.75) 50%, 
+            rgba(11, 35, 31, 1) 100%) !important;
+    }
+
+    .hero-logo {
+        height: 50px;
+    }
+
+    .badge-pill {
+        font-size: 0.82rem;
+        padding: 6px 14px;
+        line-height: 1.4;
+    }
+
     .hero-headline {
-        font-size: 2.1rem;
+        font-size: 1.95rem;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
     }
 
-    .specialists-grid {
-        grid-template-columns: 1fr;
+    .hero-subheadline {
+        font-size: 1.02rem;
+        line-height: 1.6;
     }
 
-    .included-grid {
-        grid-template-columns: 1fr;
+    .btn-primary {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+
+    /* Tarja Informativa Mobile */
+    .hero-stripe-section {
+        padding: 15px 0 0;
+    }
+
+    .hero-stripe-bar {
+        padding: 20px 16px;
+        gap: 14px;
+    }
+
+    .stripe-item {
+        gap: 14px;
+    }
+
+    .stripe-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    .stripe-text strong {
+        font-size: 0.98rem;
+    }
+
+    .stripe-text span {
+        font-size: 0.8rem;
+    }
+
+    /* Seções e Títulos Mobile */
+    .video-edition-section,
+    .target-section,
+    .specialists-section,
+    .mentor-section,
+    .practice-pillars-section,
+    .investment-section,
+    .testimonials-section,
+    .faq-section {
+        padding: 65px 0;
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+        line-height: 1.25;
+    }
+
+    .section-desc {
+        font-size: 0.96rem;
+    }
+
+    /* Banner do PPS */
+    .pps-bottom-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 14px;
+    }
+
+    .banner-text {
+        font-size: 1.1rem;
+    }
+
+    /* Card Pra Quem É Mobile */
+    .target-box {
+        padding: 36px 18px;
+    }
+
+    .target-main-phrase {
+        font-size: 1.15rem;
+        line-height: 1.6;
+    }
+
+    /* Pilares de Conteúdo */
+    .pillar-card {
+        padding: 22px 18px;
+    }
+
+    .pillar-card h4 {
+        font-size: 1.15rem;
+    }
+
+    .pillar-card p {
+        font-size: 0.92rem;
+    }
+
+    /* Card da Mentora */
+    .mentor-card {
+        padding: 32px 18px;
+    }
+
+    .mentor-headline {
+        font-size: 1.75rem;
+    }
+
+    .mentor-name {
+        font-size: 1.3rem;
+    }
+
+    .mentor-img-frame {
+        max-width: 320px;
+    }
+
+    .mentor-img {
+        height: 360px;
+        object-position: center 10%;
+    }
+
+    .mentor-bio-text {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+
+    .mentor-signature-wrapper {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mentor-signature-img {
+        height: 54px;
+    }
+
+    /* Checkout & Investimento Mobile */
+    .investment-card {
+        padding: 44px 18px 36px;
+    }
+
+    .card-badge {
+        font-size: 0.75rem;
+        padding: 5px 16px;
+        white-space: nowrap;
+    }
+
+    .investment-deliverables {
+        padding: 22px 16px;
+        margin: 24px auto;
+    }
+
+    .deliverables-title {
+        font-size: 1.02rem;
+        margin-bottom: 14px;
+    }
+
+    .deliverables-list {
+        gap: 10px;
+    }
+
+    .deliverables-list li {
+        font-size: 0.92rem;
+        gap: 10px;
+    }
+
+    .deliverables-list li i {
+        font-size: 1.15rem;
+    }
+
+    .price-times {
+        font-size: 1.25rem;
     }
 
     .price-value {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
 
-    .investment-card {
-        padding: 50px 24px;
+    .price-cash {
+        font-size: 1.02rem;
+    }
+
+    .scarcity-pill {
+        font-size: 0.88rem;
+        padding: 6px 16px;
+        margin-bottom: 28px;
     }
 
     .btn-large {
         width: 100%;
-        padding: 18px 24px;
+        padding: 16px 20px;
+        font-size: 1.02rem;
     }
 
-    .target-box {
-        padding: 40px 20px;
+    .payment-methods-info {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        text-align: center;
     }
 
-    .mentor-card {
-        padding: 36px 20px;
+    /* Depoimentos Mobile (1 em 1 com respiro e centralização perfeita) */
+    .testimonials-carousel-wrapper {
+        margin-top: 35px;
     }
 
-    .mentor-img {
-        height: 380px;
+    .testimonialsSlider .swiper-slide {
+        max-width: 320px;
+    }
+
+    .testimonials-navigation-wrapper {
+        margin-top: 24px;
+        gap: 16px;
+    }
+
+    /* FAQ Mobile */
+    .faq-question {
+        padding: 20px 18px;
+        font-size: 1.02rem;
+    }
+
+    .faq-answer {
+        padding: 0 18px;
+    }
+
+    .faq-answer p {
+        font-size: 0.94rem;
+    }
+
+    /* Bloco WhatsApp Mobile */
+    .faq-whatsapp-box {
+        padding: 32px 18px;
+        margin-top: 40px;
+    }
+
+    .faq-whatsapp-title {
+        font-size: 1.35rem;
+    }
+
+    .faq-whatsapp-desc {
+        font-size: 0.95rem;
+        margin-bottom: 22px;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 0.98rem;
+    }
+
+    /* Footer Mobile */
+    .footer-section {
+        padding: 40px 0 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-sep {
+        display: none;
     }
 }

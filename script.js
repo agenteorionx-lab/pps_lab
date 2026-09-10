@@ -81,4 +81,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Inicialização do Carrossel de Depoimentos (1 em 1 no mobile, 2 no desktop)
+    if (typeof Swiper !== 'undefined' && document.querySelector('.testimonialsSlider')) {
+        new Swiper('.testimonialsSlider', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            grabCursor: true,
+            speed: 500,
+            pagination: {
+                el: '.testimonials-navigation-wrapper .swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.testimonials-navigation-wrapper .swiper-button-next',
+                prevEl: '.testimonials-navigation-wrapper .swiper-button-prev'
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                }
+            }
+        });
+    }
 });
