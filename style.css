@@ -239,7 +239,7 @@ h1, h2, h3, h4 {
     padding: 110px 0 110px;
 }
 
-/* Camada da Dra. Mariana integrada no fundo à esquerda com cores 100% naturais (sem filtro) */
+/* Camada da Dra. Mariana integrada no fundo à esquerda com cores 100% naturais para COMPUTADOR */
 .hero-bg-dra {
     position: absolute;
     left: 2%;
@@ -252,7 +252,7 @@ h1, h2, h3, h4 {
     background-repeat: no-repeat;
     z-index: 2; /* Fica acima de overlays para preservar 100% da nitidez e das cores originais */
     pointer-events: none;
-    filter: none !important; /* Sem qualquer filtro */
+    filter: none !important; /* Sem qualquer filtro no computador */
 }
 
 /* Suave fade apenas nos últimos pixels da barra inferior para encaixar na tarja */
@@ -264,6 +264,11 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 12%;
     background: linear-gradient(to top, var(--color-bg-primary) 0%, transparent 100%);
+}
+
+/* Elemento exclusivo do Mobile - totalmente invisível no computador */
+.hero-mobile-dra {
+    display: none;
 }
 
 /* Gradiente de fundo que escurece exclusivamente o lado direito para legibilidade perfeita do texto */
@@ -1444,26 +1449,28 @@ h1, h2, h3, h4 {
         padding: 0 20px;
     }
 
+    /* Oculta a Dra do Desktop no Mobile */
     .hero-bg-dra {
+        display: none !important;
+    }
+
+    /* Dra exclusiva do Mobile: Centralizada no topo com corte suave */
+    .hero-mobile-dra {
+        display: block !important;
         position: relative !important;
-        order: -1 !important; /* Posiciona a Dra. Mariana no topo */
         width: 100% !important;
         max-width: 330px !important;
         height: 380px !important;
-        margin: 0 auto -45px !important; /* Encaixe suave com o logo e texto */
-        background-position: center top !important;
+        margin: 0 auto -40px !important; /* Transição perfeita sobrepondo o logo e badge */
+        background-image: url('fotos/foto3.png') !important;
         background-size: contain !important;
+        background-position: center top !important;
         background-repeat: no-repeat !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        top: auto !important;
         z-index: 1 !important;
-        display: block !important;
     }
 
-    /* Filtro / fade degradê suave cobrindo o corte inferior da imagem */
-    .hero-bg-dra::after {
+    /* Filtro degradê suave encobrindo a parte inferior da imagem no Mobile */
+    .hero-mobile-dra::after {
         content: '' !important;
         position: absolute !important;
         bottom: 0 !important;
@@ -1520,7 +1527,8 @@ h1, h2, h3, h4 {
     }
 
     .stripe-item {
-        justify-content: flex-start;
+        justify-content: center;
+        text-align: center;
         width: 100%;
     }
 
@@ -1601,21 +1609,13 @@ h1, h2, h3, h4 {
         display: block !important;
     }
 
-    .hero-bg-dra {
-        position: relative !important;
-        order: -1 !important;
-        display: block !important;
-        width: 100% !important;
+    .hero-mobile-dra {
         max-width: 290px !important;
         height: 360px !important;
-        margin: 0 auto -50px !important; /* Transição perfeita sobrepondo o logo e badge */
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        top: auto !important;
+        margin: 0 auto -45px !important;
     }
 
-    .hero-bg-dra::after {
+    .hero-mobile-dra::after {
         content: '' !important;
         position: absolute !important;
         bottom: 0 !important;
@@ -1657,32 +1657,47 @@ h1, h2, h3, h4 {
         font-size: 1rem;
     }
 
-    /* Tarja Informativa Mobile */
+    /* Tarja Informativa Mobile - 15% menor e textos centralizados */
     .hero-stripe-section {
-        padding: 15px 0 0;
+        padding: 12px 0 0;
     }
 
     .hero-stripe-bar {
-        padding: 20px 16px;
-        gap: 14px;
+        max-width: 320px; /* ~15% mais compacto */
+        margin: 0 auto;
+        padding: 16px 14px;
+        gap: 12px;
+        border-radius: var(--radius-md);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
 
     .stripe-item {
-        gap: 14px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        width: 100%;
     }
 
     .stripe-icon {
-        width: 38px;
-        height: 38px;
-        font-size: 1.2rem;
+        width: 34px;
+        height: 34px;
+        font-size: 1.05rem;
+    }
+
+    .stripe-text {
+        text-align: center;
     }
 
     .stripe-text strong {
-        font-size: 0.98rem;
+        font-size: 0.88rem; /* 15% menor */
+        line-height: 1.25;
     }
 
     .stripe-text span {
-        font-size: 0.8rem;
+        font-size: 0.74rem; /* 15% menor */
+        margin-top: 2px;
     }
 
     /* Seções e Títulos Mobile */
@@ -1842,17 +1857,32 @@ h1, h2, h3, h4 {
         text-align: center;
     }
 
-    /* Depoimentos Mobile (1 em 1 com respiro e centralização perfeita) */
+    /* Depoimentos Mobile (Exatamente 1 por vez, 100% enquadrado e centralizado) */
     .testimonials-carousel-wrapper {
         margin-top: 35px;
+        padding: 0 10px;
+    }
+
+    .testimonialsSlider {
+        max-width: 330px;
+        margin: 0 auto;
+        padding: 10px 0 20px;
     }
 
     .testimonialsSlider .swiper-slide {
-        max-width: 320px;
+        width: 100% !important;
+        max-width: 330px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .testimonial-card {
+        width: 100%;
+        max-width: 330px;
     }
 
     .testimonials-navigation-wrapper {
-        margin-top: 24px;
+        margin-top: 20px;
         gap: 16px;
     }
 

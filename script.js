@@ -82,14 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Inicialização do Carrossel de Depoimentos (1 em 1 no mobile, 2 no desktop)
+    // Inicialização do Carrossel de Depoimentos (1 vídeo por vez no mobile, 2 no desktop)
     if (typeof Swiper !== 'undefined' && document.querySelector('.testimonialsSlider')) {
         new Swiper('.testimonialsSlider', {
             slidesPerView: 1,
-            spaceBetween: 24,
-            loop: true,
+            spaceBetween: 20,
+            loop: false, // Com 2 vídeos apenas, loop: true no swiper duplica ou desloca os slides de forma incorreta
             grabCursor: true,
-            speed: 500,
+            speed: 400,
+            watchOverflow: true,
             pagination: {
                 el: '.testimonials-navigation-wrapper .swiper-pagination',
                 clickable: true
