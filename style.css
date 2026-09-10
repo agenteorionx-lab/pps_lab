@@ -1318,20 +1318,7 @@ h1, h2, h3, h4 {
     line-height: 1.6;
 }
 
-/* Caixa visível de pendência conforme solicitado pelo usuário */
-.pending-info-box {
-    margin-top: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(245, 234, 170, 0.12);
-    border: 1px dashed var(--color-gold);
-    color: var(--color-gold);
-    padding: 10px 16px;
-    border-radius: var(--radius-sm);
-    font-size: 0.92rem;
-    font-weight: 500;
-}
+
 
 /* ====================================================
    BLOCO DE DÚVIDAS VIA WHATSAPP (FINAL DA FAQ)
@@ -1527,8 +1514,11 @@ h1, h2, h3, h4 {
     }
 
     .stripe-item {
-        justify-content: center;
-        text-align: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        gap: 12px;
         width: 100%;
     }
 
@@ -1657,13 +1647,13 @@ h1, h2, h3, h4 {
         font-size: 1rem;
     }
 
-    /* Tarja Informativa Mobile - 15% menor e textos centralizados */
+    /* Tarja Informativa Mobile - Tópicos na mesma linha (ícone ao lado do texto) */
     .hero-stripe-section {
         padding: 12px 0 0;
     }
 
     .hero-stripe-bar {
-        max-width: 320px; /* ~15% mais compacto */
+        max-width: 320px;
         margin: 0 auto;
         padding: 16px 14px;
         gap: 12px;
@@ -1672,32 +1662,39 @@ h1, h2, h3, h4 {
     }
 
     .stripe-item {
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row; /* Ícone e textos na mesma linha horizontal */
+        justify-content: flex-start;
         align-items: center;
-        text-align: center;
-        gap: 8px;
+        text-align: left;
+        gap: 12px;
         width: 100%;
+        padding: 2px 4px;
     }
 
     .stripe-icon {
         width: 34px;
         height: 34px;
         font-size: 1.05rem;
+        flex-shrink: 0;
     }
 
     .stripe-text {
-        text-align: center;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .stripe-text strong {
-        font-size: 0.88rem; /* 15% menor */
+        font-size: 0.88rem;
         line-height: 1.25;
+        white-space: nowrap;
     }
 
     .stripe-text span {
-        font-size: 0.74rem; /* 15% menor */
+        font-size: 0.74rem;
         margin-top: 2px;
+        white-space: nowrap;
     }
 
     /* Seções e Títulos Mobile */
