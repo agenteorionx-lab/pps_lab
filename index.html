@@ -18,6 +18,9 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -35,77 +38,76 @@
         </div>
     </div>
 
-    <!-- SEÇÃO 1: HERO -->
+    <!-- SEÇÃO 1: HERO (IMERSÃO COM FUNDO INTEGRADO) -->
     <header class="hero-section">
-        <div class="hero-glow"></div>
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-logo-wrapper">
-                        <img src="Logo-PPSLAB.png" alt="PPS Lab" class="hero-logo">
-                    </div>
-                    
-                    <div class="badge-pill">
-                        <i class="ph-fill ph-calendar-check"></i> 17 de outubro. Presencial. 40 vagas.
-                    </div>
-
-                    <h1 class="hero-headline">
-                        Saia da teoria do Congresso e entre na prática dos grandes casos de PPS.
-                    </h1>
-
-                    <p class="hero-subheadline">
-                        1 dia, 7 especialistas, a fusão prática entre IA, tributação, sucessório e os casos mais complexos do mercado. Uma imersão presencial exclusiva para 40 advogados e contadores.
-                    </p>
-
-                    <div class="hero-highlight-bar">
-                        <div class="highlight-item">
-                            <i class="ph ph-calendar-blank"></i>
-                            <div>
-                                <strong>17 de outubro</strong>
-                                <span>Data confirmada</span>
-                            </div>
-                        </div>
-                        <div class="highlight-separator"></div>
-                        <div class="highlight-item">
-                            <i class="ph ph-map-pin"></i>
-                            <div>
-                                <strong>Presencial</strong>
-                                <span>São Paulo / SP</span>
-                            </div>
-                        </div>
-                        <div class="highlight-separator"></div>
-                        <div class="highlight-item">
-                            <i class="ph ph-users-three"></i>
-                            <div>
-                                <strong>40 vagas</strong>
-                                <span>Lote único e exclusivo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-actions">
-                        <a href="https://checkout.bravvius.com/35631837" target="_blank" class="btn-primary">
-                            <span>Garanta sua vaga</span>
-                            <i class="ph-bold ph-arrow-up-right"></i>
-                        </a>
-                        <span class="cta-microcopy"><i class="ph-fill ph-lock-simple"></i> Inscrição segura e imediata via Bravvius</span>
-                    </div>
+        <div class="hero-bg-dra"></div>
+        <div class="hero-overlay-gradient"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-logo-wrapper">
+                    <img src="fotos/Logo-PPSLAB.png" alt="PPS Lab" class="hero-logo">
+                </div>
+                
+                <div class="badge-pill">
+                    <i class="ph-fill ph-calendar-check"></i> 17 de outubro. Presencial. 40 vagas.
                 </div>
 
-                <div class="hero-visual">
-                    <div class="hero-image-card">
-                        <div class="hero-image-aura"></div>
-                        <img src="foto3.png" alt="Dra. Mariana Arteiro - PPS Business" class="hero-dra-img">
-                        <div class="hero-tag-floating">
-                            <span class="tag-badge">PPS LAB</span>
-                            <span class="tag-title">Dra. Mariana Arteiro</span>
-                            <span class="tag-sub">Mentora e Idealizadora</span>
-                        </div>
+                <h1 class="hero-headline">
+                    Saia da teoria do Congresso e entre na prática dos grandes casos de PPS.
+                </h1>
+
+                <p class="hero-subheadline">
+                    1 dia, 7 especialistas, a fusão prática entre IA, tributação, sucessório e os casos mais complexos do mercado. Uma imersão presencial exclusiva para 40 advogados e contadores.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://checkout.bravvius.com/35631837" target="_blank" class="btn-primary">
+                        <span>Garanta sua vaga</span>
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
+                    <span class="cta-microcopy"><i class="ph-fill ph-lock-simple"></i> Inscrição segura e imediata via Bravvius</span>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- TARJA SOFISTICADA INDEPENDENTE NA LINHA DE TRANSIÇÃO -->
+    <section class="hero-stripe-section">
+        <div class="container">
+            <div class="hero-stripe-bar">
+                <div class="stripe-item">
+                    <div class="stripe-icon">
+                        <i class="ph-bold ph-calendar-blank"></i>
+                    </div>
+                    <div class="stripe-text">
+                        <strong>17 de outubro</strong>
+                        <span>Data confirmada</span>
+                    </div>
+                </div>
+                <div class="stripe-separator"></div>
+                <div class="stripe-item">
+                    <div class="stripe-icon">
+                        <i class="ph-bold ph-map-pin"></i>
+                    </div>
+                    <div class="stripe-text">
+                        <strong>Presencial</strong>
+                        <span>São Paulo / SP</span>
+                    </div>
+                </div>
+                <div class="stripe-separator"></div>
+                <div class="stripe-item">
+                    <div class="stripe-icon">
+                        <i class="ph-bold ph-users-three"></i>
+                    </div>
+                    <div class="stripe-text">
+                        <strong>40 vagas</strong>
+                        <span>Lote único e exclusivo</span>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- SEÇÃO 2: VÍDEO DA ÚLTIMA EDIÇÃO -->
     <section class="video-edition-section">
@@ -259,83 +261,156 @@
                 <div class="gold-divider"></div>
             </div>
 
-            <div class="specialists-grid">
-                <!-- Especialista 1 -->
-                <div class="specialist-card">
-                    <div class="specialist-avatar-placeholder">
-                        <i class="ph-light ph-user"></i>
-                        <span class="spec-initials">TM</span>
-                    </div>
-                    <div class="specialist-info">
-                        <span class="specialist-topic">Inteligência Artificial no PPS</span>
-                        <h3 class="specialist-name">Thiago Massicano</h3>
-                        <p class="specialist-bio">Advogado especialista em Direito Empresarial e Societário. MBA em Business Law pela FGV-Rio.</p>
+            <!-- Carrossel Swiper dos Especialistas Convidados -->
+            <div class="specialists-carousel-wrapper">
+                <div class="swiper specialistsSlider">
+                    <div class="swiper-wrapper">
+                        <!-- Especialista 1: Thiago Massicano -->
+                        <div class="swiper-slide" data-name="Thiago Massicano">
+                            <div class="speaker-card">
+                                <img src="palestrantes/Thiago_Massicano-removebg-preview.png" alt="Thiago Massicano" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Inteligência Artificial no PPS</span>
+                                    <h3 class="speaker-name">Thiago Massicano</h3>
+                                    <p class="speaker-cv">Advogado especialista em Direito Empresarial e Societário. MBA em Business Law pela FGV-Rio.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 2: Luiz Couto -->
+                        <div class="swiper-slide" data-name="Luiz Couto">
+                            <div class="speaker-card">
+                                <img src="palestrantes/luiz-couto.png" alt="Luiz Couto" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Investimentos no PPS</span>
+                                    <h3 class="speaker-name">Luiz Couto</h3>
+                                    <p class="speaker-cv">Advogado público concursado. Planejador Financeiro Certificado e Consultor de Valores Mobiliários.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 3: Jonatas Albino -->
+                        <div class="swiper-slide" data-name="Jonatas Albino">
+                            <div class="speaker-card">
+                                <img src="palestrantes/jonatas-albino.webp" alt="Jonatas Albino" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Estratégias do ITCMD</span>
+                                    <h3 class="speaker-name">Jonatas Albino</h3>
+                                    <p class="speaker-cv">Chefe do Núcleo de Fiscalização de ITCMD na UGC/ITCMD da SEFAZ/SP.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 4: Roberto Campos -->
+                        <div class="swiper-slide" data-name="Roberto Campos">
+                            <div class="speaker-card">
+                                <img src="palestrantes/gravacao-roberto-campos.png" alt="Roberto Campos" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Contabilidade</span>
+                                    <h3 class="speaker-name">Roberto Campos</h3>
+                                    <p class="speaker-cv">Contador com especialização em análise de investimentos e tributação internacional (IRS), atuando no Brasil e nos Estados Unidos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 5: João Alberto Teixeira -->
+                        <div class="swiper-slide" data-name="João Alberto Teixeira">
+                            <div class="speaker-card">
+                                <img src="palestrantes/joao-teixeira-removebg-preview.png" alt="João Alberto Teixeira" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Governança</span>
+                                    <h3 class="speaker-name">João Alberto Teixeira</h3>
+                                    <p class="speaker-cv">Conselheiro Consultivo Certificado. Consultor em Planejamento Sucessório e Governança Familiar há 16 anos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Especialista 6: Alexandre Arregui -->
+                        <div class="swiper-slide" data-name="Alexandre Arregui">
+                            <div class="speaker-card">
+                                <img src="palestrantes/alexandre-arregui-removebg-preview.png" alt="Alexandre Arregui" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Estratégias Internacionais de PPS</span>
+                                    <h3 class="speaker-name">Alexandre Arregui</h3>
+                                    <p class="speaker-cv">Especialista em Planejamento Patrimonial e Sucessório Internacional. Pós-graduado pela PUC-RS e The Geneva Graduate Institute.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Loop Duplicado para rotação infinita contínua -->
+                        <div class="swiper-slide" data-name="Thiago Massicano">
+                            <div class="speaker-card">
+                                <img src="palestrantes/Thiago_Massicano-removebg-preview.png" alt="Thiago Massicano" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Inteligência Artificial no PPS</span>
+                                    <h3 class="speaker-name">Thiago Massicano</h3>
+                                    <p class="speaker-cv">Advogado especialista em Direito Empresarial e Societário. MBA em Business Law pela FGV-Rio.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-name="Luiz Couto">
+                            <div class="speaker-card">
+                                <img src="palestrantes/luiz-couto.png" alt="Luiz Couto" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Investimentos no PPS</span>
+                                    <h3 class="speaker-name">Luiz Couto</h3>
+                                    <p class="speaker-cv">Advogado público concursado. Planejador Financeiro Certificado e Consultor de Valores Mobiliários.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-name="Jonatas Albino">
+                            <div class="speaker-card">
+                                <img src="palestrantes/jonatas-albino.webp" alt="Jonatas Albino" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Estratégias do ITCMD</span>
+                                    <h3 class="speaker-name">Jonatas Albino</h3>
+                                    <p class="speaker-cv">Chefe do Núcleo de Fiscalização de ITCMD na UGC/ITCMD da SEFAZ/SP.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-name="Roberto Campos">
+                            <div class="speaker-card">
+                                <img src="palestrantes/gravacao-roberto-campos.png" alt="Roberto Campos" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Contabilidade</span>
+                                    <h3 class="speaker-name">Roberto Campos</h3>
+                                    <p class="speaker-cv">Contador com especialização em análise de investimentos e tributação internacional (IRS), atuando no Brasil e nos Estados Unidos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-name="João Alberto Teixeira">
+                            <div class="speaker-card">
+                                <img src="palestrantes/joao-teixeira-removebg-preview.png" alt="João Alberto Teixeira" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Governança</span>
+                                    <h3 class="speaker-name">João Alberto Teixeira</h3>
+                                    <p class="speaker-cv">Conselheiro Consultivo Certificado. Consultor em Planejamento Sucessório e Governança Familiar há 16 anos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide" data-name="Alexandre Arregui">
+                            <div class="speaker-card">
+                                <img src="palestrantes/alexandre-arregui-removebg-preview.png" alt="Alexandre Arregui" class="speaker-img" loading="lazy">
+                                <div class="speaker-info">
+                                    <span class="speaker-theme">Estratégias Internacionais de PPS</span>
+                                    <h3 class="speaker-name">Alexandre Arregui</h3>
+                                    <p class="speaker-cv">Especialista em Planejamento Patrimonial e Sucessório Internacional. Pós-graduado pela PUC-RS e The Geneva Graduate Institute.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Especialista 2 -->
-                <div class="specialist-card">
-                    <div class="specialist-avatar-placeholder">
-                        <i class="ph-light ph-user"></i>
-                        <span class="spec-initials">LC</span>
-                    </div>
-                    <div class="specialist-info">
-                        <span class="specialist-topic">Investimentos no PPS</span>
-                        <h3 class="specialist-name">Luiz Couto</h3>
-                        <p class="specialist-bio">Advogado público concursado. Planejador Financeiro Certificado e Consultor de Valores Mobiliários.</p>
-                    </div>
-                </div>
-
-                <!-- Especialista 3 -->
-                <div class="specialist-card">
-                    <div class="specialist-avatar-placeholder">
-                        <i class="ph-light ph-user"></i>
-                        <span class="spec-initials">JA</span>
-                    </div>
-                    <div class="specialist-info">
-                        <span class="specialist-topic">Estratégias do ITCMD</span>
-                        <h3 class="specialist-name">Jonatas Albino</h3>
-                        <p class="specialist-bio">Chefe do Núcleo de Fiscalização de ITCMD na UGC/ITCMD da SEFAZ/SP.</p>
-                    </div>
-                </div>
-
-                <!-- Especialista 4 -->
-                <div class="specialist-card">
-                    <div class="specialist-avatar-placeholder">
-                        <i class="ph-light ph-user"></i>
-                        <span class="spec-initials">RC</span>
-                    </div>
-                    <div class="specialist-info">
-                        <span class="specialist-topic">Contabilidade</span>
-                        <h3 class="specialist-name">Roberto Campos</h3>
-                        <p class="specialist-bio">Contador com especialização em análise de investimentos e tributação internacional (IRS), atuando no Brasil e nos Estados Unidos.</p>
-                    </div>
-                </div>
-
-                <!-- Especialista 5 -->
-                <div class="specialist-card">
-                    <div class="specialist-avatar-placeholder">
-                        <i class="ph-light ph-user"></i>
-                        <span class="spec-initials">JT</span>
-                    </div>
-                    <div class="specialist-info">
-                        <span class="specialist-topic">Governança</span>
-                        <h3 class="specialist-name">João Alberto Teixeira</h3>
-                        <p class="specialist-bio">Conselheiro Consultivo Certificado. Consultor em Planejamento Sucessório e Governança Familiar há 16 anos.</p>
-                    </div>
-                </div>
-
-                <!-- Especialista 6 -->
-                <div class="specialist-card">
-                    <div class="specialist-avatar-placeholder">
-                        <i class="ph-light ph-user"></i>
-                        <span class="spec-initials">AA</span>
-                    </div>
-                    <div class="specialist-info">
-                        <span class="specialist-topic">Estratégias Internacionais de PPS</span>
-                        <h3 class="specialist-name">Alexandre Arregui</h3>
-                        <p class="specialist-bio">Especialista em Planejamento Patrimonial e Sucessório Internacional. Pós-graduado pela PUC-RS e The Geneva Graduate Institute.</p>
-                    </div>
+                <!-- Controles de Navegação Isolados -->
+                <div class="swiper-navigation-wrapper">
+                    <button type="button" class="swiper-button-prev" aria-label="Slide anterior"></button>
+                    <div class="swiper-pagination"></div>
+                    <button type="button" class="swiper-button-next" aria-label="Próximo slide"></button>
                 </div>
             </div>
         </div>
@@ -348,7 +423,7 @@
                 <div class="mentor-grid">
                     <div class="mentor-image-col">
                         <div class="mentor-img-frame">
-                            <img src="foto1-2.png" alt="Dra. Mariana Arteiro" class="mentor-img">
+                            <img src="fotos/foto2-2.png" alt="Dra. Mariana Arteiro" class="mentor-img">
                         </div>
                     </div>
                     <div class="mentor-content-col">
@@ -357,23 +432,17 @@
                         <h3 class="mentor-name">Dra. Mariana Arteiro</h3>
                         <div class="gold-divider left"></div>
                         
-                        <p class="mentor-bio-text">
-                            Mariana Arteiro atua diariamente com Planejamento Patrimonial e Sucessório, da prática real do mercado, não só da teoria. Preside a Comissão Especial de Planejamento Sucessório e Holdings da OAB/SP (2025/2027) e é Conselheira da OAB/SP. É idealizadora do maior Congresso de PPS do país (OAB/SP, 2023 a 2026). Tem MBA Internacional em Direito Empresarial pela Universidade da Califórnia (Irvine), pós em PPS pela FGV Law e especialização em Direito Tributário.
-                        </p>
+                        <div class="mentor-bio-text">
+                            <p>Mariana Arteiro atua diretamente com Planejamento Patrimonial e Sucessório, lidando diariamente com estruturas, decisões estratégicas e desafios reais do mercado.</p>
+                            <p>Sua experiência não vem apenas da teoria, mas da prática, acompanhando casos, analisando cenários complexos e orientando profissionais sobre o melhor caminho a seguir.</p>
+                            <p>Atualmente, Mariana preside a Comissão Especial de Planejamento Sucessório e Holdings da OAB/SP (2025/2027) e é Conselheira da OAB/SP (2022/2027), ocupando uma posição estratégica no cenário jurídico nacional.</p>
+                            <p>Também é a idealizadora do maior Congresso de Planejamento Patrimonial e Sucessório do país (OAB/SP, 2023, 2024, 2025 e 2026), além de já ter ocupado cargos como Presidente da OAB Cotia e Diretora do IBDFAM Cotia.</p>
+                            <p>Sua formação inclui MBA Internacional em Direito Empresarial pela Universidade da Califórnia (Irvine), pós-graduação em Planejamento Patrimonial e Sucessório (FGV Law) e especialização em Direito Tributário.</p>
+                            <p>Hoje, Mariana é reconhecida pela capacidade de transformar conhecimento em direcionamento prático para profissionais que atuam no mercado.</p>
+                        </div>
 
-                        <div class="mentor-highlights">
-                            <div class="m-highlight-item">
-                                <i class="ph-fill ph-scales"></i>
-                                <span>Presidente da Comissão Especial de PPS e Holdings da OAB/SP</span>
-                            </div>
-                            <div class="m-highlight-item">
-                                <i class="ph-fill ph-certificate"></i>
-                                <span>Idealizadora do Maior Congresso de PPS do Brasil</span>
-                            </div>
-                            <div class="m-highlight-item">
-                                <i class="ph-fill ph-graduation-cap"></i>
-                                <span>MBA Internacional UC Irvine & FGV Law</span>
-                            </div>
+                        <div class="mentor-signature-wrapper">
+                            <img src="fotos/assinatura.png" alt="Assinatura Mariana Arteiro Adv." class="mentor-signature-img">
                         </div>
                     </div>
                 </div>
@@ -599,13 +668,13 @@
     <footer class="footer-section">
         <div class="container text-center">
             <div class="footer-logo">
-                <img src="Logo-PPSLAB-Branco.png" alt="PPS Lab" class="footer-logo-img">
+                <img src="fotos/Logo-PPSLAB-Branco.png" alt="PPS Lab" class="footer-logo-img">
             </div>
             
             <div class="footer-links">
-                <a href="#termos" class="footer-link">Termos de uso</a>
+                <a href="https://praticapps.com.br/mariana-arteiro-termos-de-uso-2/" target="_blank" rel="noopener noreferrer" class="footer-link">Termos de uso</a>
                 <span class="footer-sep">-</span>
-                <a href="#privacidade" class="footer-link">Políticas de privacidade</a>
+                <a href="https://praticapps.com.br/politica-de-privacidade/" target="_blank" rel="noopener noreferrer" class="footer-link">Políticas de privacidade</a>
             </div>
 
             <p class="footer-copy">
@@ -614,6 +683,8 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>

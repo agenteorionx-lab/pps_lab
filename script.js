@@ -47,4 +47,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Inicialização do Carrossel de Especialistas (Swiper)
+    if (typeof Swiper !== 'undefined' && document.querySelector('.specialistsSlider')) {
+        new Swiper('.specialistsSlider', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            loopPreventsSliding: false,
+            grabCursor: true,
+            speed: 600,
+            autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            pagination: {
+                el: '.specialists-carousel-wrapper .swiper-pagination',
+                clickable: true,
+                dynamicBullets: false
+            },
+            navigation: {
+                nextEl: '.specialists-carousel-wrapper .swiper-button-next',
+                prevEl: '.specialists-carousel-wrapper .swiper-button-prev'
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 24
+                },
+                992: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 1,
+                    spaceBetween: 30
+                }
+            }
+        });
+    }
 });
