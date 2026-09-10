@@ -239,6 +239,24 @@ h1, h2, h3, h4 {
     padding: 110px 0 110px;
 }
 
+/* Luz de fundo suave atrás da Dra no COMPUTADOR para contraste elegante */
+.hero-dra-glow {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 580px;
+    height: 580px;
+    background: radial-gradient(circle at 45% 45%, 
+        rgba(245, 234, 170, 0.22) 0%, 
+        rgba(30, 95, 80, 0.45) 45%, 
+        rgba(11, 35, 31, 0) 70%);
+    border-radius: 50%;
+    filter: blur(55px);
+    z-index: 1; /* Atrás da Dra (.hero-bg-dra tem z-index: 2) */
+    pointer-events: none;
+}
+
 /* Camada da Dra. Mariana integrada no fundo à esquerda com cores 100% naturais para COMPUTADOR */
 .hero-bg-dra {
     position: absolute;
@@ -266,8 +284,8 @@ h1, h2, h3, h4 {
     background: linear-gradient(to top, var(--color-bg-primary) 0%, transparent 100%);
 }
 
-/* Elemento exclusivo do Mobile - totalmente invisível no computador */
-.hero-mobile-dra {
+/* Bloco exclusivo do Mobile - totalmente invisível no computador */
+.hero-mobile-dra-wrapper {
     display: none;
 }
 
@@ -1436,38 +1454,65 @@ h1, h2, h3, h4 {
         padding: 0 20px;
     }
 
-    /* Oculta a Dra do Desktop no Mobile */
-    .hero-bg-dra {
+    /* Oculta a Dra e o Glow do Desktop no Mobile */
+    .hero-bg-dra,
+    .hero-dra-glow {
         display: none !important;
     }
 
-    /* Dra exclusiva do Mobile: Centralizada no topo com corte suave */
-    .hero-mobile-dra {
+    /* Bloco da Dra no Mobile: Centralizado no topo com nitidez e luz de fundo */
+    .hero-mobile-dra-wrapper {
         display: block !important;
         position: relative !important;
         width: 100% !important;
-        max-width: 330px !important;
-        height: 380px !important;
-        margin: 0 auto -40px !important; /* Transição perfeita sobrepondo o logo e badge */
-        background-image: url('fotos/foto3.png') !important;
-        background-size: contain !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
+        max-width: 320px !important;
+        margin: 0 auto -45px !important;
         z-index: 1 !important;
     }
 
-    /* Filtro degradê suave encobrindo a parte inferior da imagem no Mobile */
-    .hero-mobile-dra::after {
-        content: '' !important;
+    /* Luz de fundo suave posicionada ESTRITAMENTE ATRÁS da Dra no Mobile */
+    .hero-mobile-glow {
+        position: absolute !important;
+        top: 25% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 270px !important;
+        height: 270px !important;
+        background: radial-gradient(circle, 
+            rgba(245, 234, 170, 0.26) 0%, 
+            rgba(30, 95, 80, 0.5) 45%, 
+            rgba(11, 35, 31, 0) 70%) !important;
+        border-radius: 50% !important;
+        filter: blur(35px) !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+
+    /* Imagem nativa da Dra com nitidez 100% cristalina (sem nenhum filtro na frente) */
+    .hero-mobile-img {
+        position: relative !important;
+        z-index: 2 !important; /* Fica acima da luz */
+        width: 100% !important;
+        height: auto !important;
+        max-height: 420px !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+        filter: none !important;
+    }
+
+    /* Suave transição degradê cobrindo apenas a base/corte inferior */
+    .hero-mobile-fade {
         position: absolute !important;
         bottom: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        height: 48% !important;
+        height: 40% !important;
         background: linear-gradient(to bottom, 
             transparent 0%, 
-            rgba(11, 35, 31, 0.7) 50%, 
+            rgba(11, 35, 31, 0.75) 60%, 
             rgba(11, 35, 31, 1) 100%) !important;
+        z-index: 3 !important;
         pointer-events: none !important;
     }
 
@@ -1601,23 +1646,17 @@ h1, h2, h3, h4 {
         display: block !important;
     }
 
-    .hero-mobile-dra {
+    .hero-mobile-dra-wrapper {
         max-width: 290px !important;
-        height: 360px !important;
-        margin: 0 auto -45px !important;
+        margin: 0 auto -40px !important;
     }
 
-    .hero-mobile-dra::after {
-        content: '' !important;
-        position: absolute !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 52% !important;
-        background: linear-gradient(to bottom, 
-            transparent 0%, 
-            rgba(11, 35, 31, 0.75) 50%, 
-            rgba(11, 35, 31, 1) 100%) !important;
+    .hero-mobile-img {
+        max-height: 380px !important;
+    }
+
+    .hero-mobile-fade {
+        height: 42% !important;
     }
 
     .hero-logo {
